@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
     const [error, setError] = useState(null);
 
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    
 
     useEffect(() => {
         const checkUserLoggedIn = async () => {
@@ -17,6 +18,8 @@ export const AuthProvider = ({ children }) => {
                     withCredentials: true 
                 });
                 setUser(res.data.user);
+                console.log("VITE_BACKEND_URL =", import.meta.env.VITE_BACKEND_URL);
+
             } catch (err) {
                 setUser(null);
             } finally {
