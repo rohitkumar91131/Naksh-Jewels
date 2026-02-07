@@ -1,0 +1,191 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 15px; 
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d4af37;
+    white-space: nowrap;
+}
+
+.navbar-search {
+    flex: 1; 
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #d4af37;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0; 
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.cart-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: #d4af37;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    height: 18px;
+    width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+.login-btn {
+    background-color: #333;
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #d4af37;
+}
+
+.logout-btn {
+    background-color: transparent;
+    border: 1px solid #c62828;
+    color: #c62828;
+}
+
+.logout-btn:hover {
+    background-color: #c62828;
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    padding: 0 5px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap; 
+        padding: 0.8rem 1rem;
+        gap: 10px;
+    }
+
+    .brand-link {
+        order: 1;
+        flex: 1;
+    }
+    
+    .brand-name {
+        display: none; 
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .navbar-search {
+        order: 3;
+        flex-basis: 100%; 
+        max-width: none;
+        margin-top: 5px;
+    }
+
+    .navbar-actions {
+        order: 4;
+        width: 100%; 
+        display: none;
+        flex-direction: column;
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        margin-top: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .navbar-actions.active {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .cart-link {
+        margin: 0 auto;
+        width: fit-content;
+    }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

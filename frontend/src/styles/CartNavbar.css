@@ -1,0 +1,175 @@
+/* --- CartNavbar Container --- */
+.cart-navbar {
+    background-color: #ffffff;
+    height: 80px; /* Thoda bada size */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #d4af37; /* Gold border */
+}
+
+.navbar-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- Brand --- */
+.brand-link { text-decoration: none; }
+.brand-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+}
+
+/* --- Search Bar --- */
+.search-bar-container {
+    position: relative;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 40px 12px 20px;
+    border-radius: 30px;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #d4af37;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    color: #888;
+    cursor: pointer;
+}
+
+/* --- Links --- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: color 0.3s;
+}
+
+.nav-item:hover { color: #d4af37; }
+
+/* --- Cart Icon Specifics --- */
+.cart-link-active {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #fdfdfd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+}
+
+.cart-icon-wrapper {
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d4af37;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    height: 18px;
+    width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/* --- Buttons --- */
+.login-btn, .logout-btn {
+    padding: 10px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.login-btn {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: none;
+}
+.login-btn:hover { background-color: #d4af37; transform: translateY(-2px); }
+
+.logout-btn {
+    background-color: transparent;
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+}
+.logout-btn:hover { background-color: #ff4d4d; color: white; }
+
+.user-greeting {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* --- Mobile Toggle --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .search-bar-container { display: none; } /* Hide search on mobile */
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        padding: 30px 0;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        display: none;
+    }
+    
+    .nav-links.active { display: flex; }
+}
